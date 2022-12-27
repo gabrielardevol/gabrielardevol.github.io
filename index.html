@@ -1,12 +1,12 @@
 <head>
   <style>
-    .container{
+    #container{
       display: flex;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <div class="one">One</div>
     <div class="two">Two</div>
     <div class="three">Three</div>
@@ -14,4 +14,19 @@
     <div class="five">Five</div>
     <div class="six">Six</div>
   </div>
+  <button id="btn">hello</button>
+  <script>
+    btn = document.querySelector("#btn") ;
+    console.log(btn)
+    container = document.querySelector("#container") ;
+    console.log(container)
+
+    function addDiv() {
+      div = document.createElement("div")
+      div.innerText = "hello"
+      container.appendChild(div)
+      console.log(div)
+    }
+    btn.addEventListener("click", (event) => {addDiv()}) // {console.log("test")}
+  </script>
 </body>
