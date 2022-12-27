@@ -1,20 +1,30 @@
 <head>
   <style>
+    #btn{
+      margin-top: 4em;
+
+      }
+
     #container{
       display: flex;
+    }
+
+    .newclass{
+      color: red;
+      background-color: bisque;
+      height: 10em;
+      width: 10em;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div id="container">
-    <div class="one">One</div>
-    <div class="two">Two</div>
-    <div class="three">Three</div>
-    <div class="four">Four</div>
-    <div class="five">Five</div>
-    <div class="six">Six</div>
+    <div class="newclass">One</div>
   </div>
-  <button id="btn">hello</button>
+
+  <button id="btn">Add 'div'</button>
+
   <script>
     btn = document.querySelector("#btn") ;
     console.log(btn)
@@ -23,6 +33,7 @@
 
     function addDiv() {
       div = document.createElement("div")
+      div.setAttribute("class", "newclass")
       div.innerText = "hello"
       container.appendChild(div)
       console.log(div)
