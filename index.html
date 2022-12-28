@@ -1,3 +1,7 @@
+<!--TODO:
+functionality: change background color pressing a button
+-->
+
 <head>
   <style>
     #btn{
@@ -7,22 +11,50 @@
 
     #container{
       display: flex;
+      flex-wrap: wrap;
+      /* background-color: rgb(0, 0, 0); */
     }
 
     .newclass{
-      color: red;
-      background-color: bisque;
-      height: 10em;
-      width: 10em;
+
+      height: 20em;
+      width: 20em;
       text-align: center;
     }
   </style>
 </head>
 <body>
+  <h1>Radial gradients laboratory</h1>
+  <img src="wheel.webp" style="width: 20em;" alt="">
+  <p>  complementary color combinations
+  </p>
   <div id="container">
-    <div class="newclass">One</div>
+    <div class="newclass" style="
+background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255,214,0,1) 68%);
+    ">two colours</div>
+
+    <div class="newclass" style="
+background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(255, 230, 0) 41%, rgba(255,214,0,1) 68%);
+    ">three colours</div>
   </div>
 
+  <div id="container">
+    <div class="newclass" style="
+background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 68%);
+    ">two colours</div>
+
+    <div class="newclass" style="
+background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(255, 230, 0) 41%, transparent 68%);
+    ">three colours</div>
+  </div>
+
+  <form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </form>
   <button id="btn">Add 'div'</button>
 
   <script>
@@ -34,7 +66,14 @@
     function addDiv() {
       div = document.createElement("div")
       div.setAttribute("class", "newclass")
-      div.innerText = "hello"
+      div.innerHTML =
+          "<div class='test'>"
+        + "<label for='fname'> Hola"
+        + "</label>" + "<br>"
+        + "<input type='text' value='John' style='width: 2em'>"
+        + "<input type='text' value='John' style='width: 2em'>"
+        + "<input type='text' value='John' style='width: 2em'>"
+        + "</div>"
       container.appendChild(div)
       console.log(div)
     }
